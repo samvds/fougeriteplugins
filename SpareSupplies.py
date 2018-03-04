@@ -10,8 +10,8 @@ white = "[color#FFFFFF]"
 cyan = "[color#00FFFF]"
 green = "[color#00FF00]"
 red = "[color#FF0000]"
-yellow = "[color$FFFF00]"
-sysname = "LegacyLives"
+yellow = "[color#FFFF00]"
+sysname = "SpareSupplies"
 
 class SpareSupplies:
 
@@ -21,9 +21,9 @@ class SpareSupplies:
     def Amount(self, arg):
         try:
             x = int(arg)
-            if x <= 1:
+            if x <= 0:
                 return 101
-                #returns 101 when number is smaller than or equal to 1
+                #returns 101 when number is smaller than 1
             return x
             #returns a number greater than or equal to 1
         except:
@@ -378,5 +378,3 @@ class SpareSupplies:
                         Player.Inventory.RemoveItem("Metal Window", amount)
                         Player.Inventory.AddItem("Low Quality Metal", 4*amount)
                         Player.Notice("Thank you for thinking of the environment. Go green!")
-                    else:
-                        Player.MessageFrom(sysname, yellow + "☢ " + red + "You don't have enough to recycle!")
